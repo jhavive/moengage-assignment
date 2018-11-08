@@ -1,4 +1,5 @@
 import { CAMPAIGN_STATE } from '../constants/CampaignStates';
+import Action from './Action';
 
 export default class Campaign {
     
@@ -7,10 +8,9 @@ export default class Campaign {
         this.createDate = new Date();
         this.type = type;
         this.state = state;
-        this.actionHistory = [{
-            title: 'Created',
-            date: new Date(),
-        }];
+        this.actionHistory = [];
+        this.comments=[];
+        this.actionHistory.push(new Action('Created'));
     }
 
 }
